@@ -1,0 +1,83 @@
+site_name: RAG From Scratch
+repo_url: https://github.com/gurucharanmk/RAGFromScratch
+theme:
+  icon:
+    repo: fontawesome/brands/git-alt
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotation
+    - content.code.copy
+  language: en
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+      primary: teal
+      accent: purple
+    - scheme: slate
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+      primary: teal
+      accent: lime
+
+nav:
+  - Home: index.md
+  - Installation: installation.md
+  - User Guide: user-guide.md
+  - API Reference:
+      - api-reference/index.md
+      - Data Model Configurations:
+          - api-reference/config/data_source_config.md
+          - api-reference/config/model_config.md
+          - api-reference/config/vector_db_config.md
+      - Data Sources:
+          - api-reference/data_source/base.md
+          - api-reference/data_source/pdf_source.md
+      - Language Models:
+          - api-reference/models/base.md
+          - api-reference/models/ollama_model.md
+      - Text Splitters:
+          - api-reference/text_splitter/base.md
+          - api-reference/text_splitter/recursive_splitter.md
+      - Vector Databases:
+          - api-reference/vector_db/base.md
+          - api-reference/vector_db/faiss_db.md
+      - Prompt:
+          - api-reference/prompt.md
+      - RAG:
+          - api-reference/rag_system.md
+  - Changelog: changelog.md
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - admonition
+  - pymdownx.arithmatex:
+      generic: true
+  - footnotes
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.mark
+  - attr_list
+
+plugins:
+  - search
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          rendering:
+            show_source: true
+
+copyright: |
+  &copy; 2024 <a href="https://github.com/gurucharanmk"  target="_blank" rel="noopener">Gurucharan MK</a>

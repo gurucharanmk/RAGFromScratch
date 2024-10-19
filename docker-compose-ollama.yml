@@ -1,0 +1,14 @@
+services:
+  ollama:
+    #image: ollama/ollama:latest
+    image: ollama/ollama:0.3.6
+    ports:
+      - 11434:11434
+    volumes:
+      - ./ollama/models:/root/.ollama
+      - ./ollama_entrypoint.sh:/ollama_entrypoint.sh
+    container_name: ollama
+    pull_policy: always
+    tty: true
+    restart: unless-stopped
+    entrypoint: ["/usr/bin/bash", "/ollama_entrypoint.sh"]
